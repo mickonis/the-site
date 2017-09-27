@@ -1,0 +1,49 @@
+/*
+=====================================================================
+INPUT
+=====================================================================
+*/
+.input{
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    &.has-error{
+        .help-block{
+            display: block !important;
+            min-height: 18px;
+        }
+    }
+    &__label{
+        font-size: 14px;
+        color: #000;
+        float: left;
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    &__field{
+        font-size: 14px;
+        width: 100%;
+        border: 1px solid $dark-grey;
+        height: 30px;
+        padding: 0 10px;
+        line-height: normal;
+        -webkit-appearance: none;
+    }
+    &__textarea{
+        font-size: 14px;
+        width: 100%;
+        border: 1px solid $dark-grey;
+        height: 130px;
+        padding: 5px 10px;
+        line-height: normal;
+        -webkit-appearance: none;
+        resize: vertical;
+    }
+}
+.form-error{
+    font-size: 14px;
+    margin-top: 6px;
+    float: left;
+    color: #ff2c2c;
+    line-height: 18px;
+}

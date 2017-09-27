@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <section class="main-content">
+            <div class="row">
+                <div class="col col--white span_12">
+                    <article>
+                        <h1 class="h1">Aenean ac diam nec neque fringilla</h1>
+                        {% for i in range(0, 5) -%}
+                        <p class="text">Integer eget mauris et urna pulvinar consectetur hendrerit eget mauris. Praesent a interdum justo. Aenean ac diam nec neque fringilla cursus. Donec iaculis tortor in nunc vehicula rutrum. Integer malesuada mollis ligula at varius.</p>
+                        {%- endfor %}
+                    </article>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col--white span_6">
+                    <p class="text">Integer eget mauris et urna pulvinar consectetur hendrerit eget mauris. Praesent a interdum justo. Aenean ac diam nec neque fringilla cursus. Donec iaculis tortor in nunc vehicula rutrum. Integer malesuada mollis ligula at varius. Dorce pila meracone.</p>
+                </div>
+                <div class="col col--white span_6">
+                    <h2 class="h2">Aenean ac diam nec neque</h2>
+                    <ul class="list">
+                        <li class="list__item">
+                            <a href="" class="link">Integer eget mauris et urna</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="" class="link">Pulvinar consectetur hendrerit</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="" class="link">Oget mauris praesent</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <aside class="sidebar">
+            <h2 class="h2 h2--with-border">Aenean ac diam nec neque fringilla</h2>
+            <p class="text">Integer eget mauris et urna pulvinar consectetur hendrerit eget mauris. Praesent a interdum justo. Aenean ac diam nec neque fringilla cursus. Donec iaculis tortor in nunc vehicula rutrum. Integer malesuada mollis ligula at varius.</p>
+            <div class="sidebar__widget">
+                <form action="">
+                    <div class="input">
+                        <label for="first-name" class="input__label">First name:</label>
+                        <input class="input__field "id="first-name" name="first-name" type="text" placeholder="Enter your name" data-validation="required length" data-validation-length="2-64">
+                    </div>
+                    <div class="input">
+                        <label for="last-name" class="input__label">Last name:</label>
+                        <input class="input__field "id="last-name" name="last-name" type="text" placeholder="Enter your last name" data-validation="required length" data-validation-length="2-64">
+                    </div>
+                    <div class="input">
+                        <label for="message" class="input__label">Message:</label>
+                        <textarea class="input__textarea" name="message" id="message"></textarea>
+                    </div>
+                    <button class="btn btn--primary">Submit</button>
+                </form>
+            </div>
+        </aside>
+        <section class="secondary-content secondary-content--grey">
+            <div class="row row--no-gutter">
+                {% for i in range(0, 3) -%}
+                <div class="col span_4">
+                    <p class="text">Integer eget mauris et urna pulvinar consectetur hendrerit eget mauris. Praesent a interdum justo. Aenean ac diam nec neque fringilla cursus. Donec iaculis tortor in nunc vehicula rutrum. Integer malesuada mollis ligula at varius.</p>
+                </div>
+                {%- endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock %}

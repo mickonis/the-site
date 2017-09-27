@@ -1,0 +1,19 @@
+/*
+=====================================================================
+BUTTONS
+=====================================================================
+*/
+.btn{
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0 25px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    &--primary{
+        background: $primary;
+        color: $white;
+    }
+}

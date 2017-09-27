@@ -1,0 +1,131 @@
+/*
+=====================================================================
+MIXINS
+=====================================================================
+*/
+// transformations
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+@mixin translate3d ($x, $y, $z) {
+	@include transform(translate($x, $y, $z));
+}
+@mixin scale ($x) {
+	@include transform(scale($x));
+}
+//transition
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+//placeholder
+@mixin optional-at-root($sel) {
+	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
+		@content;
+	}
+}
+@mixin placeholder {
+	@include optional-at-root('::-webkit-input-placeholder') {
+		@content;
+	}
+
+	@include optional-at-root(':-moz-placeholder') {
+		@content;
+	}
+
+	@include optional-at-root('::-moz-placeholder') {
+		@content;
+	}
+
+	@include optional-at-root(':-ms-input-placeholder') {
+		@content;
+	}
+}
+//responsive
+@mixin breakpoint($class) {
+
+	@if $class == md {
+		@media only screen and (max-width: 1050px) { @content; }
+    }
+
+	@else if $class == sm {
+		@media only screen and (max-width: 996px) { @content; }
+	}
+
+    @else if $class == xs {
+		@media only screen and (max-width: 768px) { @content; }
+	}
+
+	@else if $class == xxs {
+		@media only screen and (max-width: 360px) { @content; }
+	}
+
+
+	@else {
+		@warn "Breakpoint mixin supports: xxs, xs, sm, md";
+	}
+}
+//box shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $left $top $blur $color;
+		-moz-box-shadow:inset $left $top $blur $color;
+		box-shadow:inset $left $top $blur $color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $color;
+		-moz-box-shadow: $left $top $blur $color;
+		box-shadow: $left $top $blur $color;
+	}
+}
+//box sizing
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+//clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+//center block
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+//ellipsis
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+//position absolute
+@mixin absolute ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+//calc
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}

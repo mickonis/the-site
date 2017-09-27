@@ -1,0 +1,61 @@
+/*
+=====================================================================
+CONTENT
+=====================================================================
+*/
+.container{
+    width: 1050px;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: relative;
+    @include breakpoint(md){
+        width: 100%;
+    }
+    @include breakpoint(xs){
+        padding: 0 15px;
+    }
+    &:before{
+        content: " ";
+        display: table;
+    }
+    &:after{
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+.main-content{
+    width: 710px;
+    float: left;
+    @include breakpoint(md){
+        width: 70%;
+    }
+    @include breakpoint(sm){
+        width: 100%;
+    }
+}
+.secondary-content{
+    width: 100%;
+    float: left;
+    margin-bottom: 25px;
+    &--grey{
+        background: $medium-grey;
+    }
+}
+.sidebar{
+    width: 280px;
+    float: right;
+    @include breakpoint(md){
+        width: 28%;
+    }
+    @include breakpoint(sm){
+        width: 100%;
+    }
+    &__widget{
+        float: left;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid $dark-grey;
+        margin-bottom: 20px;
+    }
+}

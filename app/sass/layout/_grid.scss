@@ -1,0 +1,130 @@
+/*
+=====================================================================
+GRID
+=====================================================================
+*/
+@mixin col {
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+}
+
+.col {
+   @include col;
+   &--white{
+       background: #fff;
+   }
+}
+
+@mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
+    $one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+    width:($one_col * $num) + ($gutter_pc * ($num - 1));
+    border-left-width:$gutter_px;
+    padding:$padding;
+    margin-left:$gutter_pc;
+}
+
+@mixin span_first {
+    margin-left:0;
+}
+
+	@media screen and (min-width: 0px) {
+
+        .row {
+            margin-left:-20px;
+            &--no-gutter{
+                margin-left: 0;
+                .col{
+                    margin: 0;
+                    border-left-width: 0;
+                }
+            }
+        }
+
+        .col {
+            border-left-width:20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        $max_columns: 12;
+        $padding: 20px;
+        $gutter_px: 20px;
+        $gutter_pc: 0;
+
+        .span_1 {
+            @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_2 {
+            @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_3 {
+            @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_4 {
+            @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_5 {
+            @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_6 {
+            @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_7 {
+            @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_8 {
+            @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_9 {
+            @include span(9, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_10 {
+            @include span(10, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_11 {
+            @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);
+            @include breakpoint(xs){
+                width: 100%;
+            }
+        }
+        .span_12 {
+            @include span_first;
+            width:100%;
+        }
+    }

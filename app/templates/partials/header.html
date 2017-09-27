@@ -1,0 +1,48 @@
+<header class="header">
+    <div class="container">
+        <a href="" class="header__logo-wrap">
+            <img src="./img/logo@2x.png" width="230" height="46" alt="" class="header__logo">
+        </a>
+        <div class="header__menu js-menu-open"></div>
+        <div class="header__nav-wrap js-menu">
+            <div class="header__close js-menu-close"></div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    {% for i in range(0, 3) -%}
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">menu link</a>
+                    </li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+            <nav class="header__nav header__nav--big">
+                <ul class="header__nav-list">
+                    {% for i in range(0, 4) -%}
+                    <li class="header__nav-item js-submenu-trigger">
+                        <a href="javascript:void(0);" class="header__nav-link">menu link</a>
+                        <div class="submenu js-submenu-content">
+                            <ul class="submenu__list">
+                                <li class="submenu__item">
+                                    <a href="" class="submenu__link">Integer eget mauris</a>
+                                </li>
+                                <li class="submenu__item">
+                                    <a href="" class="submenu__link">Pulvinar consectetur</a>
+                                </li>
+                                <li class="submenu__item">
+                                    <a href="" class="submenu__link">Oget mauris praesent</a>
+                                </li>
+                                <li class="submenu__item">
+                                    <a href="" class="submenu__link">Interdum justo</a>
+                                </li>
+                                <li class="submenu__item">
+                                    <a href="" class="submenu__link">Nec neque fringilla</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
